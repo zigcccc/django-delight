@@ -1,0 +1,27 @@
+{% extends "inventory/base.html" %}
+{% block title %}Menu :: Django Delight{% endblock %}
+
+{% block content %}
+  <h1>Menu</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Price</th>
+    </tr>
+    {% for menu_item in menuitem_list %}
+      <tr>
+        <td>{{ menu_item.name }}</td>
+        <td>
+          <ol>
+            {% for rr in menu_item.recipe_requirements %}
+              <li>{{ rr.ingredient.name }}</li>
+            {% endfor %}
+          </ol>
+        </td>
+        <td>{{ menu_item.price }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="{% url 'menu_item_create' %}">Add menu item</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "inventory/base.html" %}
+{% block title %}Ingredients :: Django Delight{% endblock %}
+
+{% block content %}
+  <h1>Ingredients</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Available quantity</th>
+      <th>Unit</th>
+      <th>Price</th>
+    </tr>
+    {% for ingredient in ingredient_list %}
+      <tr>
+        <td>{{ ingredient.name }}</td>
+        <td>{{ ingredient.available_quantity }}</td>
+        <td>{{ ingredient.unit }}</td>
+        <td>{{ ingredient.price_per_unit }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="{% url 'ingredient_create' %}">Add ingredient</a>
+{% endblock %}

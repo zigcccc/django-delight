@@ -1,0 +1,19 @@
+{% extends "inventory/base.html" %}
+{% block title %}Purchases :: Django Delight{% endblock %}
+
+{% block content %}
+  <h1>Purchases</h1>
+  <table>
+    <tr>
+      <th>Purchased item</th>
+      <th>Time of purchase</th>
+    </tr>
+    {% for purchase in purchase_list %}
+      <tr>
+        <td>{{ purchase.menu_item.name }}</td>
+        <td>{{ purchase.timestamp }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="{% url 'purchase_create' %}">Record new purchase</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "inventory/base.html" %}
+{% block title %}Insights :: Django Delight{% endblock %}
+
+{% block content %}
+  <h1>Insights</h1>
+  <table>
+    <tr>
+      <th>Revenue</th>
+      <th>Cost</th>
+      <th>Profit</th>
+    </tr>
+      <tr>
+        <td>${{ revenue }} USD</td>
+        <td>${{ cost }} USD</td>
+        <td>${{ profit }} USD</td>
+      </tr>
+  </table>
+{% endblock %}

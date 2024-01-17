@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = "/inventory/auth/login"
+LOGIN_REDIRECT_URL = "/inventory/insights"
 
 # Application definition
 
